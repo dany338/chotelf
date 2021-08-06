@@ -1,7 +1,9 @@
 import React from 'react'
 import pageStyles from './styles/searchroomsStyles';
 import pageStylesc from './styles/confirmStyles';
-import { Box, Accordion, AccordionSummary, AccordionDetails, Grid } from '@material-ui/core'
+import { Box, Accordion, AccordionSummary, AccordionDetails, Grid } from '@material-ui/core';
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
 import { useDashboard } from '../hooks/useDashboard';
 import SearchIcon from '../assets/rooms/search.svg';
 import CloseIcon from '../assets/rooms/close.svg';
@@ -83,6 +85,32 @@ const Searchrooms = ({ className = '' }) => {
 
   return <Box className={[styles.contSearch, className].join(' ')}>
     <Box className={styles.contInput}>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <KeyboardDatePicker
+          size="small"
+          variant="inline"
+          inputVariant="outlined"
+          className={styles.inputFieldPicker}
+          margin="normal"
+          id="date-picker-start"
+          format="dd/MM/yyyy"
+          value={props.value ? props.value : new Date()}
+          onChange={props.onChange}
+        />
+      </MuiPickersUtilsProvider>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <KeyboardDatePicker
+          size="small"
+          variant="inline"
+          inputVariant="outlined"
+          className={styles.inputFieldPicker}
+          margin="normal"
+          id="date-picker-end"
+          format="dd/MM/yyyy"
+          value={props.value ? props.value : new Date()}
+          onChange={props.onChange}
+        />
+      </MuiPickersUtilsProvider>
       <input
         value={query}
         placeholder='Can’t find your room? Search it here!'

@@ -5,7 +5,7 @@ import Layout from '../layout';
 import pageStyles from './styles/dashboardStyles';
 import { useAtom } from 'jotai';
 import { utilsAtom } from '../../atoms';
-import SearchLeads from '../../components/searchLeads';
+import SearchRooms from '../../components/searchRooms';
 
 const Lead = ({ history }) => {
   const styles = pageStyles();
@@ -25,7 +25,7 @@ const Lead = ({ history }) => {
   return (
     <Layout>
       <Box className={styles.container}>
-        <SearchLeads className={styles.animation } />
+        <SearchRooms className={styles.animation } />
       </Box>
     </Layout>
   )

@@ -200,6 +200,10 @@ const useStyles = makeStyles({
   columnHeader: {
     fontWeight: 'bold',
     color: colors.preppyGreen,
+  },
+  inputFieldPicker: {
+    width: '100%',
+    marginTop: 0
   }
 });
 
